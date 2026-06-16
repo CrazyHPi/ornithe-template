@@ -3,28 +3,25 @@
 	"id": "example_mod",
 	"version": "${version}",
 	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A template for ornithe mod loader.",
 	"authors": [
-		"Me!"
+		"CrazyH"
 	],
 	"contact": {
-		"homepage": "https://example.com/",
-		"sources": "https://github.com/OrnitheMC/ornithe-template-mod"
+		"homepage": "https://github.com/CrazyHPi/ornithe-template",
+		"sources": "https://github.com/CrazyHPi/ornithe-template"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/example_mod/icon.png",
+	"license": "LGPL-3.0-or-later",
+	"icon": "assets/example/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"init": [
-			"com.example.example_mod.ExampleMod"
-		]
+      "preLaunch" : ["xyz.crazyh.example.ExampleMod::init"]
 	},
 	"mixins": [
 		"example_mod.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.14.21",
-		"minecraft": "1.7.2",
-		"osl-entrypoints": ">=0.4.0"
-	}
+		"fabricloader": ">=0.13.3",
+		"minecraft": "1.12.2"
+    }
 }

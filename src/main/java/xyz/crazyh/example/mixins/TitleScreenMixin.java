@@ -1,11 +1,11 @@
-package com.example.example_mod.mixin;
+package xyz.crazyh.example.mixins;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import com.example.example_mod.ExampleMod;
+import xyz.crazyh.example.ExampleMod;
 
 import net.minecraft.client.gui.screen.TitleScreen;
 

@@ -1,4 +1,4 @@
-package com.example.example_mod;
+package xyz.crazyh.example;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
