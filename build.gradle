@@ -1,7 +1,7 @@
 plugins {
 //	id 'maven-publish'
-	id 'fabric-loom' version '1.17-SNAPSHOT'
-	id 'ploceus' version '1.17-SNAPSHOT'
+	id 'fabric-loom' version '1.19-SNAPSHOT'
+	id 'ploceus' version '1.19-SNAPSHOT'
 }
 
 base {
@@ -14,15 +14,27 @@ repositories {
     // jitpack
 //    maven { url 'https://jitpack.io' }
     // self-hosted maven
-//    maven { url 'https://fastdl.crazyh.fun/maven/' }
+    maven { url 'https://fastdl.crazyh.fun/maven/' }
 }
 
 loom {
+//	accessWidenerPath = file("src/main/resources/example.accesswidener")
 
+	runs {
+		client { preferGradleTask = false }
+		server { preferGradleTask = false }
+	}
+
+	runConfigs.configureEach {
+		jvmArguments.add("-Dmixin.debug.export=true")
+
+//		programArguments.add("--username=Crazy_H")
+		programArguments.addAll("--width=1600", "--height=900")
+	}
 }
 
 ploceus {
-//    setIntermediaryGeneration(1)
+    setIntermediaryGeneration(2)
 }
 
 dependencies {
@@ -31,7 +43,6 @@ dependencies {
 
 	exceptions ploceus.raven(project.raven_build)
 	signatures ploceus.sparrow(project.sparrow_build)
-//	nests ploceus.nests(project.nests_build)
 
     // mappings,could be mcp as well
     // feather
@@ -92,6 +103,9 @@ publishing {
 		// Notice: This block does NOT have the same function as the block in the top level.
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
+		maven {
+			url "$projectDir/publish"
+		}
 	}
 }
 */
